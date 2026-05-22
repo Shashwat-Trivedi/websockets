@@ -18,6 +18,8 @@ wss.on('connection', (socket , request) => {
         });
     });
 
+    socket.send('Welcome to the WebSocket server!');
+
     socket.on('error', (error) => {
         console.error(`Error from client ${ip}:`, error.message);
     });
@@ -26,3 +28,4 @@ wss.on('connection', (socket , request) => {
         console.log(`Client ${ip} disconnected`);
     });
 });
+ 
